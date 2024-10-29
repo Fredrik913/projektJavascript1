@@ -1,11 +1,278 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/output.css' />
+    <title>Freaky Fashion</title>
+    <link rel="stylesheet" href="/stylesheets/accordionBig.css" />
+    <link rel="stylesheet" href="/stylesheets/accordionSmall.css" />
+    <link rel="stylesheet" href="/stylesheets/header.css" />
+    <link rel="stylesheet" href="/stylesheets/hero.css" />
+    <link rel="stylesheet" href="/stylesheets/icon.css" />
+    <link rel="stylesheet" href="/stylesheets/pictureGallary.css" />
+    <link rel="stylesheet" href="/stylesheets/spot.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p class="text-3xl text-red-500">Welcome to <%= title %></p>
+    <!-- -------------------------------------------------------------------------Header--------------------------------------------------------------------------------------->
+    <header>
+      <div class="headerBlock1">
+        <img
+          src="https://placehold.co/600x200"
+          class="logotyp"
+          alt="Tombild"
+          class="spotpicture"
+        />
+        <div class="input-icon-Block">
+          <div class="search">
+            <input type="text" placeholder="Sök produkt" required />
+          </div>
+          <div>
+            <a href=""><i class="bi bi-heart-fill icon"></i></a>
+            <a href=""><i class="bi bi-bag-fill icon"></i></a>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <!--Länkar till bildgalleri ect -->
+        <div class="headerBlock2">
+          <a href="#nyheter">Nyheter</a>
+          <a href="#nyheter">Topplista</a>
+          <a href="#nyheter">Rea</a>
+          <a href="#nyheter">Kampanjer</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- -------------------------------------------------------------------------Hero--------------------------------------------------------------------------------------->
+      <section>
+        <div class="heroBlock">
+          <img src="https://placehold.co/600x400" alt="Tom bild " />
+          <div class="heroText">
+            <h2 id="text">Lorem, ipsum dolor.</h2>
+            <span class="span4"
+              >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem
+              similique autem labore laborum eum molestias est sequi.</span
+            >
+          </div>
+        </div>
+      </section>
+      <!-- ------------------------------------------------------------------Spots-------------------------------------------------------------------------------------------------- -->
+      <section>
+        <div class="spotBlock">
+          <div class="spotCard">
+            <a href="/homepage/product-details.html">
+              <img
+                src="https://placehold.co/600x400"
+                alt="Tom bild"
+                class="spotpicture"
+              />
+            </a>
+            <div class="spotText">Lorem, ipsum dolor.</div>
+          </div>
+          <div class="spotCard">
+            <a href="/homepage/product-details.html">
+              <img
+                src="https://placehold.co/600x400"
+                alt="Tom bild"
+                class="spotpicture"
+              />
+            </a>
+            <div class="spotText">Lorem, ipsum dolor.</div>
+          </div>
+          <div class="spotCard">
+            <a href="/homepage/product-details.html">
+              <img
+                src="https://placehold.co/600x400"
+                alt="Tom bild"
+                class="spotpicture"
+              />
+            </a>
+            <div class="spotText">Lorem, ipsum dolor.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- -----------------------------------------------------------------------------Bildgalleri--------------------------------------------------------------------------------- -->
+
+      <section>
+        <div class="grid-product-container">
+          <% products.forEach(product => { %>
+          <article class="productcard-relative">
+            <a href="/homepage/product-details.html?id=<%= product.id %>">
+              <img
+                src="<%= product.image %>"
+                alt="<%= product.name %>"
+                class="spotpicture"
+              />
+            </a>
+            <div class="text-productcard">
+              <span class="span1"><%= product.name %></span>
+              <span class="span2"><%= product.price %>:-</span>
+            </div>
+            <span class="span3"><%= product.brand %></span>
+            <a href="http://www.aftonbladet.se">
+              <i class="bi bi-heart absolut"></i>
+            </a>
+          </article>
+          <% }) %>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <!-- ------------------------------------------------------------Icon ---------------------------------------------------------------------------------------------------------------- -->
+      <section>
+        <div class="iconContainer">
+          <div class="icon-Flex">
+            <div class="iconText">
+              <i class="bi bi-globe-americas"></i>
+              <div>Gratis frakt och returer</div>
+            </div>
+            <div class="iconText">
+              <i class="bi bi-airplane"></i>
+              <div>Expressfrakt</div>
+            </div>
+          </div>
+          <!--icon-flex-->
+          <div class="icon-Flex">
+            <div class="iconText">
+              <i class="bi bi-shield-shaded"></i>
+              <div>säkra betalningar</div>
+            </div>
+            <div class="iconText">
+              <i class="bi bi-emoji-smile-fill"></i>
+              <div>Nyheter varje dag</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- -------------------------------------------------------------------Accordion__liten------------------------------------------------------------------------------------------ -->
+      <!-- TODO använd inte label utanför <form> -->
+      <section>
+        <div class="accordion">
+          <div>
+            <input
+              type="radio"
+              name="Accordion_meny"
+              id="section_shopping"
+              class="accordion__input"
+              checked
+            />
+            <label for="section_shopping" class="accordion__label">
+              Shopping
+            </label>
+            <div class="accordion__content">
+              <ul>
+                <li>
+                  <a href="">Vinterjackor</a>
+                </li>
+                <li>
+                  <a href="">Pufferjackor</a>
+                </li>
+                <li>
+                  <a href="">Kappa</a>
+                </li>
+                <li>
+                  <a href="">Trenchcoats</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="Accordion_meny"
+              id="section_minaSidor"
+              class="accordion__input"
+            />
+            <label for="section_minaSidor" class="accordion__label">
+              Mina Sidor
+            </label>
+            <div class="accordion__content">
+              <ul>
+                <li>
+                  <a href="">Mina Ordrar</a>
+                </li>
+                <li>
+                  <a href="">Mitt Konto</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="Accordion_meny"
+              id="section_support"
+              class="accordion__input"
+            />
+            <label for="section_support" class="accordion__label">
+              Kundtjänst
+            </label>
+            <div class="accordion__content">
+              <ul>
+                <li>
+                  <a href=""> Returnpolicy</a>
+                </li>
+                <li>
+                  <a href="">Integritetspolicy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- -------------------------------------------------------------Accordion__stor-------------------------------------------------------------------------------------------------- -->
+
+      <section class="accordion_flex">
+        <div class="accordion_big">
+          <div>
+            <span class="span-accordion-big">Shopping</span>
+            <ul>
+              <li>
+                <a href="">Vinterjackor</a>
+              </li>
+              <li>
+                <a href="">Pufferjackor</a>
+              </li>
+              <li>
+                <a href="">Kappa</a>
+              </li>
+              <li>
+                <a href="">Trenchcoats</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <span class="span-accordion-big">Mina sidor</span>
+            <ul>
+              <li>
+                <a href="">Mina Ordrar</a>
+              </li>
+              <li>
+                <a href="">Mitt Konto</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <span class="span-accordion-big">Kundtjänst</span>
+            <ul>
+              <li>
+                <a href=""> Returnpolicy</a>
+              </li>
+              <li>
+                <a href="">Integritetspolicy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <span class="span5"> &copy;Freaky fashion </span>
+      </section>
+    </footer>
   </body>
 </html>
+
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------- -->

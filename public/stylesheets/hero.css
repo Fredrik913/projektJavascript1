@@ -1,0 +1,41 @@
+.heroBlock {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 8px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: 1px solid black;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+.span4 {
+  display: block;
+  margin-top: 8px;
+}
+
+@media (min-width: 640px) {
+  .heroBlock img {
+    max-width: 800px;
+  }
+}
+@media (min-width: 1024px) {
+  .heroBlock {
+    flex-direction: row-reverse;
+  }
+  .heroBlock img {
+    max-width: 1024px;
+  }
+  #text {
+    font-size: 1.5em;
+  }
+  .span4 {
+    display: block;
+    margin-top: 8px;
+    font-size: 1.2em;
+  }
+  .heroBlock {
+    margin-top: 40px;
+  }
+}

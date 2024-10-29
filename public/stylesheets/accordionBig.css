@@ -1,0 +1,28 @@
+/* ----Accordion__stor----- */
+.accordion_big {
+  display: none;
+}
+@media (min-width: 640px) {
+  .accordion_big {
+    display: flex;
+    justify-content: flex-start;
+    gap: 100px;
+    flex-direction: row;
+    padding-left: 10px;
+    background-color: white;
+    margin-top: 25px;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .accordion_big div {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85em;
+  }
+  .span-accordion-big {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 4px;
+  }
+}

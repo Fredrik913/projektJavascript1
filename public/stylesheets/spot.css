@@ -1,0 +1,38 @@
+.spotBlock {
+  display: none;
+  padding-bottom: 20px;
+}
+@media (min-width: 1024px) {
+  .spotBlock {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    flex-direction: row;
+    gap: 10px;
+  }
+  .spotCard {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+  }
+  .spotpicture {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .spotText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    font-weight: bolder;
+  }
+}
